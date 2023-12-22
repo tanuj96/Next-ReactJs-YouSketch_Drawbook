@@ -48,7 +48,15 @@ const Board = () => {
             context.lineWidth = size
         }
 
+        const handleChangeConfig = (config) => {
+            changeConfig(config.color, config.size);
+        }
         changeConfig(color, size);
+        socket.on('changeConfig', handleChangeConfig);
+
+        return () => {
+            socket.off('changeConfig', handleChangeConfig);
+        }
     }, [color, size]);
 
 
