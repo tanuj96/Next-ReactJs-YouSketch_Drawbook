@@ -30,7 +30,9 @@ const Board = () => {
             const imageData = drawHistory.current[historyPointer.current];
             context.putImageData(imageData, 0, 0);
         }
-
+        else if (actionMenuItem === MENU_ITEMS.RESET) {
+            context.reset();
+        }
         dispatch(actionItemClick(null));
     }, [actionMenuItem, dispatch])
 

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import cx from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPencil, faEraser, faRotateLeft, faRotateRight, faFileArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { faPencil, faEraser, faRotateLeft, faRotateRight, faFileArrowDown, faXmark } from '@fortawesome/free-solid-svg-icons';
 import styles from './index.module.css';
 import { menuItemClick, actionItemClick } from '@/slice/menuSlice';
 import { MENU_ITEMS } from '@/constants';
@@ -34,6 +34,9 @@ const Menu = () => {
             </div>
             <div className={styles.iconWrapper} onClick={() => { handleActionItemClick(MENU_ITEMS.DOWNLOAD) }}>
                 <FontAwesomeIcon icon={faFileArrowDown} className={styles.icon} />
+            </div>
+            <div className={styles.iconWrapper} onClick={() => { handleActionItemClick(MENU_ITEMS.RESET) }}>
+                <FontAwesomeIcon icon={faXmark} className={styles.icon} />
             </div>
         </div >
     )
